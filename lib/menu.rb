@@ -1,8 +1,11 @@
-require_relative 'helpers'
+require 'support'
+
 class Menu
-  attr_accessor :target_price
-  attr_accessor :items
-  attr_reader   :combinations
+
+  include Support
+
+  attr_accessor :target_price, :items, :combinations
+
   def initialize(csv_file = nil)
     @target_price = 0
     @items        = []
