@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'menu'
 
 describe Menu, '#new' do
@@ -16,35 +17,35 @@ end
 
 describe Menu, '#get_combos' do
 
-  let(:possible_menuitem) { Menu.new("spec/possible.txt") }
-  let(:impossible_menuitem) { Menu.new("spec/impossible.txt") }
+  let(:possible_menuitem) { Menu.new('spec/possible.txt') }
+  let(:impossible_menuitem) { Menu.new('spec/impossible.txt') }
   let(:possible_combinations) { possible_menuitem.combinations }
   let(:impossible_combinations) { impossible_menuitem.combinations }
 
   it 'creates combinations' do
     expect(possible_combinations).to include([
-      {:name=>"walnut", :price=>500},
-      {:name=>"acorn", :price=>500}])
-    expect(possible_combinations).to include([{:name=>"cashew", :price=>200},
-                                              {:name=>"almond", :price=>800}])
+      {:name=>'walnut', :price=>500},
+      {:name=>'acorn', :price=>500}])
+    expect(possible_combinations).to include([{:name=>'cashew', :price=>200},
+                                              {:name=>'almond', :price=>800}])
     expect(impossible_combinations.count).to eq 0
   end
 end
 
 describe Menu, '#show_results' do
 
-  let(:winner) { Menu.new("spec/possible.txt") }
-  let(:loser) { Menu.new("spec/impossible.txt") }
+  let(:winner) { Menu.new('spec/possible.txt') }
+  let(:loser) { Menu.new('spec/impossible.txt') }
 
   it 'shows the winning combinations' do
     expect(winner.show_results).to include(
-      "Greetings. Here are your 5 winning menu combinations")
+      'Greetings. Here are your 5 winning menu combinations')
   end
 
   it 'notifies of impossible combinations' do
     expect(loser.show_results).to include(
-      "Looks like we can't make anything happen"\
-      " with the current menu / budget. Sorry.")
+      'Looks like we can\'t make anything happen'\
+      ' with the current menu / budget. Sorry.')
   end
 
 end

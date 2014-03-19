@@ -14,7 +14,7 @@ class Menu
 
   def populate_data!(csv_file)
     self.items = []
-    File.open(csv_file).each_with_index do |line, index|      
+    File.open(csv_file).each_with_index do |line, index|
       if index == 0
         self.target_price = parse_price(line)
       else
