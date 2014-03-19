@@ -3,3 +3,4 @@ coverage/
 metric_fu/
 /tmp
 .DS_Store
+Gemfile.lock

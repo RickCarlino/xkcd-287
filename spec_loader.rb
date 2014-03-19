@@ -1,1 +1,0 @@
-Dir["spec/*.rb"].each {|file| load file }
